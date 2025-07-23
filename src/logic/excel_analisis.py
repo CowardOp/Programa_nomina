@@ -99,7 +99,9 @@ class procesador_excel:
             ws.cell(row=fila, column=103).value = dias_trabajados
 
             # Sumar columnas 103 + 104 en la columna 113
-            ws.cell(row=fila, column=113).value = f"=CY{fila}+CZ{fila}"
+            ws.cell(row=fila, column=113).value = (
+                f"=CY{fila}+CZ{fila}+DA{fila}+DB{fila}+DC{fila}+DD{fila}+DE{fila}+DF{fila}+DG{fila}+DH{fila}"
+            )
 
             # PAGO NORMAL o PARCIAL como valor numérico (columna 114)
             if dias_trabajados + total_extras > 15:
